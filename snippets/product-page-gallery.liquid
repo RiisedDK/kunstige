@@ -401,7 +401,7 @@
     {% endif %}
 </script>
 {%- if product_image_popup == 'fancybox' -%}
-    <link rel="stylesheet" href="{{ 'component-fancybox.css' | asset_url }}" media="print" onload="this.media='all'">
+   <link rel="stylesheet" data-href="{{ 'component-fancybox.css' | asset_url }}">
     <noscript>{{ 'component-fancybox.css' | asset_url | stylesheet_tag }}</noscript>
 {%- endif -%}
 <div class="product-details product-gallery{% if has_sidebar %} has-sidebar{% endif %}" data-section-id="{{ section.id }}" data-section-type="product" id="ProductSection-{{ section.id }}" data-has-combo="{{ has_product_combo }}" data-image-opo>
@@ -438,7 +438,7 @@
     <div class="productView-container {% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
         <div class="productView halo-productView layout-{{ thumnail_layout }} positionMainImage--{{ main_image_position }}{% if product.media.size == 0 %} productView-no-media{% endif %}{% if show_sticky_info %} productView-sticky{% endif %}{% if main_image_enable_parallax_mb %} productView-parallax-mobile{%endif %}{% if has_sidebar %} has-left-sidebar sidebar--layout_{{ sidebar_type }}{% endif %}" data-product-handle="{{ product.handle }}">
             {%- if has_sidebar -%}
-                {{ 'component-main-sidebar.css' | asset_url | stylesheet_tag }}
+                <link data-href="{{ 'component-main-sidebar.css' | asset_url }}" rel="stylesheet" />
                 <div class="toolbar-wrapper toolbar-mobile">
                     <div class="toolbar-item toolbar-sidebar" data-sidebar>
                         <span class="toolbar-icon icon-filter">
@@ -1240,7 +1240,7 @@
                                                     </div>
                                                 {%- endif-%}
                                             </complementary-products>
-                                            <script src="{{ "build-complementary-products.js" | asset_url }}" defer></script>
+                                            <script type="lazyload_js" data-src="{{ "build-complementary-products.js" | asset_url }}"></script>
                                         </div>
                                 {%- endcase -%}
                             {%- endfor -%}
@@ -1324,7 +1324,7 @@
     %}
 {%- endif -%}
 
-<script src="{{ 'variants.js' | asset_url }}" defer="defer"></script>
+<script type="lazyload_js" data-src="{{ 'variants.js' | asset_url }}"></script>
 {%- if show_sticky_add_to_cart -%}
     <script src="{{ 'sticky-add-to-cart.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
@@ -1339,7 +1339,7 @@
     <script src="{{ 'gsap.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {%- if product_image_popup == 'fancybox' -%}
-    <script src="{{ 'fancybox.js' | asset_url }}" defer="defer"></script>
+    <script type="lazyload_js" data-src="{{ 'fancybox.js' | asset_url }}"></script>
 {%- endif -%}
 {%- if zoomed_image and main_image_show_custom_cursor != true -%}
     <script src="{{ 'zoomed-image.js' | asset_url }}" defer="defer"></script>

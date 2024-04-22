@@ -95,7 +95,7 @@
                     </div>
                   {%- endif -%}
                   {%- if form.posted_successfully? -%}
-                    <script>
+                    <script type="lazyload_js">
                       $(document).ready(function () {
                         var newsletterSuccessPopup = (function () {
                           var popup = $('.newsletter-success-modal');
@@ -125,7 +125,7 @@
                       });
                     </script>
                   {% else %}
-                    <script>
+                    <script type="lazyload_js">
                       $(document).ready(function () {
                         if (window.location.href.indexOf('newsletter&form_type=customer') > -1) {
                           var newsletterSuccessPopup = (function () {

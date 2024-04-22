@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ 'component-menu-mobile.css' | asset_url }}" media="all" onload="this.media='all'">
+<link rel="stylesheet" data-href="{{ 'component-menu-mobile.css' | asset_url }}">
 <noscript>{{ 'component-menu-mobile.css' | asset_url | stylesheet_tag }}</noscript>
 
 <{% if section.settings.sticky_header_type != 'none' %}sticky-header-mobile{% else %}div{% endif %} class="header-mobile" style="--bg-color: {% if section.settings.gradient != blank %}{{ section.settings.gradient }}{% else %}{{ section.settings.background }}{% endif %}; --p-top: {{ section.settings.padding_top }}px; --p-bottom: {{ section.settings.padding_bottom }}px">
@@ -122,6 +122,7 @@
                                 {%- endif -%}
                             </div>
                         {%-  when 'cart' -%}
+                           {% comment %}
                             <div class="header-mobile--icon" style="--i-color: {{ block.settings.color }}; --color-bubble: {{ block.settings.color_bubble }}; --bg-bubble: {{ block.settings.bg_bubble }}">
                                 <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link link--text focus-inset" id="cart-icon-bubble"{% if settings.show_quick_cart %} data-cart-sidebar{% endif %}>
                                     {%- case block.settings.icon -%}
@@ -142,6 +143,15 @@
                                     </div>
                                 </a>
                             </div>
+                          {% endcomment %}  
+                           
+										<div class="cart-icon-custom">
+                                              <a href="{{ routes.cart_url }}">
+											    <span class="item-count" class="text" aria-hidden="true" data-cart-count>{{ cart.item_count }}</span>
+                                                <img style="height: 25px;width: 25px;" class="cart-icon-img" src="https://cdn.shopify.com/s/files/1/0727/8172/6042/files/shopping-cart.png?v=1712218235" />
+                                              </a>
+                                        </div> 
+									
                     {%- endcase -%}
                 </div>
             {%- endfor -%}
@@ -149,7 +159,7 @@
     </div>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header-mobile{% else %}div{% endif %}>
 
-{% javascript %}
+<script>
     class StickyHeaderMobile extends HTMLElement {
         constructor() {
             super();
@@ -246,7 +256,7 @@
     }
   
     customElements.define('sticky-header-mobile', StickyHeaderMobile);
-{% endjavascript %}
+</script>
 
 {% schema %}
 {

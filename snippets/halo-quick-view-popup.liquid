@@ -1,7 +1,7 @@
 {%- unless request.page_type == 'product' -%}
-	<link rel="stylesheet" href="{{ 'component-product.css' | asset_url }}" media="print" onload="this.media='all'">
+	<link rel="stylesheet" data-href="{{ 'component-product.css' | asset_url }}">
 {%- endunless -%}
-<link rel="stylesheet" href="{{ 'component-quick-view.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" data-href="{{ 'component-quick-view.css' | asset_url }}">
 
 {%- unless request.page_type == 'product' -%}
 	<noscript>{{ 'component-product.css' | asset_url | stylesheet_tag }}</noscript>
@@ -17,8 +17,8 @@
 	</div>
 </div>
 
-<script src="{{ 'variants-quick-view.js' | asset_url }}" defer="defer"></script>
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<script type="lazyload_js" data-src="{{ 'variants-quick-view.js' | asset_url }}"></script>
+<script type="lazyload_js" data-src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 <script type="text/javascript">
 	window.variant_image_group_quick_view = {{ settings.show_quick_view_variant_image_group }};
 </script>

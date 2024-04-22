@@ -1,4 +1,4 @@
-{{ 'component-megamenu.css' | asset_url | stylesheet_tag: preload: true }}
+<link data-href="{{ 'component-megamenu.css' | asset_url }}" rel="stylesheet" />
 {%-liquid
     assign header_icons = section.blocks | where: 'type', 'header_icons'
 -%}
@@ -237,7 +237,7 @@
          {% render 'halo-language-currency-sidebar' %}
     {%- endif -%}
 {%- endif -%}
-{% javascript %}
+<script>
   class StickyHeader extends HTMLElement {
     constructor() {
       super();
@@ -359,7 +359,7 @@
   }
 
   customElements.define('sticky-header', StickyHeader);
-{% endjavascript %}
+</script>
 
 
 <script type="application/ld+json">

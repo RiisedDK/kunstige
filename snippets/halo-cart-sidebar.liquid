@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ 'component-quick-cart.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" data-href="{{ 'component-quick-cart.css' | asset_url }}">
 
 <noscript>{{ 'component-quick-cart.css' | asset_url | stylesheet_tag }}</noscript>
 
@@ -40,4 +40,4 @@
 		</cart-coupon-discount>
   	</div>
 </div>
-<script src="{{ 'halo-toolcart.js' | asset_url }}" defer="defer"></script>
+<script type="lazyload_js" data-src="{{ 'halo-toolcart.js' | asset_url }}"></script>

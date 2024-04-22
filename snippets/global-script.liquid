@@ -1,13 +1,13 @@
-{{ 'vendor.js' | asset_url | script_tag }}
-{{ 'global.js' | asset_url | script_tag }}
-{{ 'lazysizes.min.js' | asset_url | script_tag }}
+<script type="lazyload_js" data-src="{{ 'vendor.js' | asset_url }}"></script>
+<script type="lazyload_js" data-src="{{ 'global.js' | asset_url }}"></script>
+<script type="lazyload_js" data-src="{{ 'lazysizes.min.js' | asset_url }}"></script>
 
 {%- if settings.show_quick_search -%}
-    <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    <script type="lazyload_js" data-src="{{ 'predictive-search.js' | asset_url }}"></script>
 {%- endif -%}
 
 {%- if settings.banner_animation == 'effect_1' -%}
-    <script src="{{ 'banner-animation.js' | asset_url }}" defer="defer"></script>
+    <script type="lazyload_js" data-src="{{ 'banner-animation.js' | asset_url }}"></script>
 {%- endif -%}
 
 {% liquid
@@ -46,7 +46,7 @@
     endif
 %}
 
-<script>
+<script type="lazyload_js">
     window.lazySizesConfig = window.lazySizesConfig || {};
     lazySizesConfig.loadMode = 1;
     window.lazySizesConfig.init = false;

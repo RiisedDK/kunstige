@@ -23,7 +23,7 @@
 <form action="{{ routes.cart_url }}/add" method="post" class="variants" id="{{ id }}-{{ product.id }}-{{ sectionId }}{% if check %}-list{% endif %}" data-product-id="{{ product.id }}" enctype="multipart/form-data">
     {%- if sold_out -%}
         {%- if settings.show_notify_form -%}
-            <a class="button button-ATC is-notify-me" href="{{ product.url }}" data-btn-addToCart>
+            <a class="button button-ATC is-notify-me" href="{{ product.url }}" >
                 {{ 'notify_form.general.label' | t }}
             </a>
         {%- else -%}
@@ -41,7 +41,7 @@
                         class="button button-ATC"
                         type="submit"
                         data-form-id="#{{ id }}-{{ product.id }}-{{ sectionId }}"
-                        data-btn-addToCart
+                        
                     >
                         {% unless settings.product_card_layout == '06' %}
                             {{ 'products.product.add_to_cart' | t }}
@@ -78,10 +78,11 @@
                 <button
                     type="submit"
                     name="add"
-                    data-btn-addToCart
+                    
                     data-available="{{ allowOutStockSale }}"
                     class="product-form__submit button button--primary an-{{ atc_animation }}{% if first_inventory_grid == 0 %} button-text-change{% else %}{% if show_subtotal_text %} button-text-change{% endif %}{% endif %}"
-                    id="product-add-to-cart">
+                    id="product-add-to-cart"
+                   >
                     {%- if first_inventory_grid > 0 -%}
                         {%- if show_subtotal_text and subtotal_style == '2' -%}
                             {%- assign subtotal = subtotal | strip_html -%}
@@ -102,7 +103,7 @@
                 <button
                     type="submit"
                     name="add"
-                    data-btn-addToCart
+                    
                     class="product-form__submit button button--secondary an-{{ atc_animation }}{% if show_subtotal_text %} button-text-change{% endif %}"
                     id="product-add-to-cart"
                 >

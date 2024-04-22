@@ -3,7 +3,7 @@
     assign swipe = section.settings.service_block_swipe_on_mobile
     assign grid_gap = section.settings.grid_gap | times: 0.5 | append: 'px'
 -%}
-<link rel="stylesheet" href="{{ 'component-custom-service-block.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" data-href="{{ 'component-custom-service-block.css' | asset_url }}">
 <noscript>{{ 'component-custom-service-block.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- if settings.banner_animation == 'effect_1' -%}

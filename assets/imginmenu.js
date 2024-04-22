@@ -34,11 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
             img.src = "https://cdn.shopify.com/s/files/1/0727/8172/6042/files/Rillelys_e128e404-9770-4851-9d8a-66118411bfd4.png?v=1710851831"; // Add your image source here
             img.classList.add('menuIconLux');
             link.insertBefore(img, link.firstChild);
-        } else if (navText === "Harlequin LED Bloklys") {
-            var img = document.createElement('img');
-            img.src = "https://cdn.shopify.com/s/files/1/0727/8172/6042/files/Harlequin_01ed9274-4921-4149-a7af-f20265f6bc57.png?v=1712905913"; // Add your image source here
-            img.classList.add('menuIconLux');
-            link.insertBefore(img, link.firstChild);
         } else if (navText === "Udendørs LED bloklys") {
             var img = document.createElement('img');
             img.src = "https://cdn.shopify.com/s/files/1/0727/8172/6042/files/Udendors_LED_Bloklys.png?v=1711458810"; // Add your image source here
@@ -66,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
             link.insertBefore(img, link.firstChild);
         } else if (navText === "Lysestager") {
             var img = document.createElement('img');
-            img.src = "https://cdn.shopify.com/s/files/1/0727/8172/6042/files/Lysestager_82879d47-afd9-4034-b2ba-46819dab91c5.png?v=1711458780"; // Add your image source here
+            img.src = "https://cdn.shopify.com/s/files/1/0727/8172/6042/files/Udendors_pakketilbud.png?v=1711458810"; // Add your image source here
             img.classList.add('menuIconLux');
             link.insertBefore(img, link.firstChild);
         } else if (navText === "Kunstige blomster") {

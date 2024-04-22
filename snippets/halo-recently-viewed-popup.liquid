@@ -216,5 +216,5 @@
 
 <div class="recently-viewed-popup-mb content-align-{{ settings.recently_viewed_align_mb }}"></div>
 
-{{ 'recently-viewed-product.js' | asset_url | script_tag }}
-<script src="{{ 'halo-recently-viewed.js' | asset_url }}" defer="defer"></script>
+<script type="lazyload_js" data-src="{{ 'recently-viewed-product.js' | asset_url }}"></script>
+<script type="lazyload_js" data-src="{{ 'halo-recently-viewed.js' | asset_url }}"></script>

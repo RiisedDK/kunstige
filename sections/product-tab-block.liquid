@@ -568,7 +568,7 @@
     <script src="{{ 'gsap.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
-<script type="text/javascript">
+<script type="lazyload_js">
     if (typeof productTabSection == 'undefined') {
         class ProductTabsSection extends HTMLElement {
             constructor() {

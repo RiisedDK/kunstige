@@ -1,7 +1,7 @@
 {% if section.blocks.size > 0 %}
 {%- assign swipe = section.settings.spotlight_block_swipe_on_mobile -%}
 {%- assign position_horizontal_slick_arrow = section.settings.position_horizontal_slick_arrow -%}
-<link rel="stylesheet" href="{{ 'component-spotlight-block.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" data-href="{{ 'component-spotlight-block.css' | asset_url }}">
 <noscript>{{ 'component-spotlight-block.css' | asset_url | stylesheet_tag }}</noscript>
 {%- if settings.banner_animation == 'effect_1' -%}
     {{ 'component-spotlight-banner-animation.css' | asset_url | stylesheet_tag }}

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ 'component-auth.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" data-href="{{ 'component-auth.css' | asset_url }}">
 <noscript>{{ 'component-auth.css' | asset_url | stylesheet_tag }}</noscript>
 
 <customer-auth class="halo-sidebar halo-sidebar-right halo-auth-sidebar" data-auth-sidebar id="halo-auth-sidebar">
@@ -78,4 +78,4 @@
         {%- endif -%}
     </div>
 </customer-auth>
-<script src="{{ 'halo-customer-login.js' | asset_url }}" defer="defer"></script>
+<script type="lazyload_js" data-src="{{ 'halo-customer-login.js' | asset_url }}"></script>

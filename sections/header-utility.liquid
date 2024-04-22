@@ -1,4 +1,4 @@
-{{ 'component-header-utility.css' | asset_url | stylesheet_tag }}
+<link data-href="{{ 'component-header-utility.css' | asset_url }}" rel="stylesheet" />
 
 <header class="header header-utility" style="--spacing-l-r: {{ section.settings.padding_full_width }}px; --padding-top: {{ section.settings.padding_top }}px; --padding-bottom: {{ section.settings.padding_bottom }}px; --bg-color: {% if section.settings.header_bg_gradient != blank %}{{ section.settings.header_bg_gradient }}{% else %}{{ section.settings.header_bg }}{% endif %}">
     <div class="container container-{{ section.settings.container }}">
@@ -98,7 +98,7 @@
                                 {%- endif -%}
                             </details-modal>
                         {%- when 'function_group' -%}
-                            <div class="header__icons text-right clearfix" style="--customer-color: {{ block.settings.customer_color }}; --wishlist-color: {{ block.settings.wishlist_color }}; --cart-color: {{ block.settings.cart_color }}; --cart-item-color: {{ block.settings.cart_color_item }}; --cart-bg-color: {{ block.settings.cart_bg_item }}; --cart-font-size: {{ block.settings.cart_item_font_size }}px; --la-cu-color: {{ block.settings.language_currency_color }}">
+                            <div class=" header__icons text-right clearfix" style="--customer-color: {{ block.settings.customer_color }}; --wishlist-color: {{ block.settings.wishlist_color }}; --cart-color: {{ block.settings.cart_color }}; --cart-item-color: {{ block.settings.cart_color_item }}; --cart-bg-color: {{ block.settings.cart_bg_item }}; --cart-font-size: {{ block.settings.cart_item_font_size }}px; --la-cu-color: {{ block.settings.language_currency_color }}">
                                 {%- if block.settings.show_cart or block.settings.show_wishlist or block.settings.show_customer -%}
                                     <div class="header__iconItem header__group">
                                         {%- if shop.customer_accounts_enabled and block.settings.show_customer -%}
@@ -121,17 +121,17 @@
                                                 {% render 'icon-heart-2' %}
                                             </a>
                                         {%- endif -%}
-                                        {%- if block.settings.show_cart -%}
-                                            <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link link--text focus-inset" id="cart-icon-bubble"{% if settings.show_quick_cart %} data-cart-sidebar{% endif %}>
-                                                {% render 'icon-cart-03' %}
-                                                <div class="cart-count-bubble">
-                                                    {%- if cart.item_count < 100 -%}
-                                                        <span class="text" aria-hidden="true" data-cart-count>{{ cart.item_count }}</span>
-                                                    {%- endif -%}
-                                                    <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-                                                </div>
-                                            </a>
-                                        {%- endif -%}
+                                       
+                                       {%- if block.settings.show_cart -%}
+										<div class="cart-icon-custom">
+                                              <a href="{{ routes.cart_url }}">
+											    <span class="item-count" class="text" aria-hidden="true" data-cart-count>{{ cart.item_count }}</span>
+                                                <img style="height: 25px;width: 25px;" class="cart-icon-img" src="https://cdn.shopify.com/s/files/1/0727/8172/6042/files/shopping-cart.png?v=1712218235" />
+                                              </a>
+                                        </div> 
+										{%- endif -%}    
+                                     
+                                       
                                     </div>
                                 {%- endif -%}
                                 {%- if block.settings.show_language_currency -%}
